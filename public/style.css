@@ -1,0 +1,262 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  text-align: center;
+  font-family: "Tajawal", sans-serif;
+}
+@font-face {
+  font-family: "Anurati";
+  src: url("fonts/Anurati-Regular.otf");
+}
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #00188f;
+  font-weight: bold;
+  color: white;
+}
+.navbar a {
+  text-decoration: none;
+  padding: 2%;
+  font-size: 150%;
+  color: white;
+}
+.navbar a:hover {
+  background-color: rgb(3, 0, 82);
+}
+.navbar {
+  width: 80%;
+  margin-top: 2%;
+}
+.logo img {
+  width: 35%;
+  padding: 0%;
+  padding-top: 2%;
+}
+.fitness-and-yoga img {
+  width: 55%;
+  margin-top: 3%;
+}
+#home {
+  background-image: url("img/banner_bg.png");
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
+  object-fit: cover;
+  height: 900px;
+}
+h1.main-heading {
+  font-family: "Anton", sans-serif;
+  font-size: 400%;
+  padding-top: 15%;
+  padding-right: 32%;
+  margin: 0;
+}
+#about {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 3.5%;
+}
+.about-heading h2 {
+  font-size: 200%;
+}
+.about-start {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1%;
+}
+.about-content {
+  padding-left: 4%;
+  padding-right: 12%;
+  font-size: 130%;
+}
+.about-image img {
+  width: 140%;
+}
+.why-us h2 {
+  font-size: 180%;
+}
+.why-us p {
+  font-size: 150%;
+}
+.choose-us {
+  display: flex;
+  justify-content: space-around;
+}
+#plans {
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 5%;
+}
+#plans h2 {
+  font-size: 250%;
+}
+.fitness-plans {
+  display: flex;
+  justify-content: space-between;
+}
+.yoga-plans {
+  display: flex;
+  justify-content: space-between;
+}
+.why-us {
+  background-color: #00188f;
+  width: 1100px;
+  color: white;
+  margin-top: 2%;
+}
+.why-us div {
+  padding: 0 1%;
+}
+.yoga1 {
+  flex: 33.33%;
+  padding: 5px;
+}
+#blogs ul li {
+  list-style-type: none;
+}
+#blogs {
+  margin-top: 8%;
+  padding-top: 1%;
+  background-color: #00188f;
+  color: white;
+  padding: 2%;
+}
+#blogs ul li a {
+  color: white;
+  font-size: 140%;
+}
+.blogs img {
+  width: 50%;
+}
+.pictures1 {
+  display: flex;
+  justify-content: space-between;
+  height: 70%;
+}
+.pictures1 img {
+  width: 80%;
+}
+#gallery {
+  padding-top: 3%;
+}
+#contact {
+  margin: 0;
+  background-color: #00188f;
+  color: white;
+  font-size: 130%;
+}
+#contact h2 {
+  margin: 0;
+}
+.insta {
+  width: 7%;
+}
+.fb {
+  width: 5%;
+}
+
+.home-bg {
+  display: flex;
+  background-image: url("img/banner_bg.png");
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+  object-fit: cover;
+  height: 850px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  color: #f1f1f1;
+  background: rgba(0, 0, 0, 0.616);
+  width: 100%;
+  padding: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #00188f;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  color: black;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.container-sm {
+  width: 40%;
+}
+
+.err {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: none;
+  border: none;
+}
+
+.err-angular {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+}
+
+.encflex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexbody {
+  flex: 33.33%;
+  padding: 5px;
+}

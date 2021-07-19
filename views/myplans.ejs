@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet" />
+    <title>My Plans</title>
+  </head>
+  <body>
+    <div class="main-menu">
+      <div class="logo">
+        <img src="img/logo.png" />
+      </div>
+      <div class="navbar" style="text-align: right; padding-right: 10px">
+        <a href="./index.html">Home</a>
+        <a href="./index.html">About</a>
+        <a href="./index.html">Plans</a>
+        <a href="./index.html">Blogs</a>
+        <a href="./index.html">Gallery</a>
+        <a href="./index.html">Contact</a>
+        <a href="/myplans">My Plans</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
+    <% if (Object.entries(data.plans).length === 0) { %>
+      <h1>You haven't registered for any plans yet.</h1>
+    <% } else { %>
+      <h1>Your Current Plans Include:</h1>
+      <section class = "encflex">
+        <% data.plans.forEach((item)=> { %>
+          <div class = "flexbody">
+            <img src="<%=item.img%>" />
+            <h3><%=item.desc %> - <%=item.rate %>/-</h3>
+          </div>
+        <% }); %>
+      </section>
+    <% } %>
+  </body>
+</html>

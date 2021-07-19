@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet" />
+    <title>Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    <div class="main-menu">
+      <div class="logo">
+        <img src="img/logo.png" />
+      </div>
+      <div class="navbar" style="text-align: right; padding-right: 10px;">
+        <a href="./index1.html">Home</a>
+        <a href="./index1.html">About</a>
+        <a href="./index1.html">Contact</a>
+        <a href="./login.html">Login</a>
+        <a href="./signup.html">Signup</a>
+      </div>
+    </div>
+
+    <section class="home-bg">
+      <form action="/login" method="POST">
+        <div class="container">
+          <h1>Login</h1>
+          <p>Please fill in this form to continue.</p>
+          <hr />
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required ng-model="mail" />
+          <div class="err" id="email-err">
+            Your email: <span ng-bind="mail"></span> doesn't conform to regular email standards
+          </div>
+          <div class="err" id="email-missing">
+            Email is required.
+          </div>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required />
+          <div class="err" id="pass-err">
+            Password should be greater than 8 characters.
+          </div>
+          <div class="err" id="pass-missing">
+            Password is required.
+          </div>
+          <button type="submit" class="registerbtn">Login</button>
+        </div>
+
+        <div class="container signin">
+          <p>Don't have an account? <a href="./signup.html">Sign up</a>.</p>
+        </div>
+      </form>
+    </section>
+    <script>
+      $(document).ready(function() {
+        $("form").on("submit", function(event) {
+          let flag = true;
+          let email = $("input[name=email]").val();
+          let password = $("input[type=password]").val();
+          const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const password_regex = /^[\w\s]{8,}$/;
+          if (!email_regex.test(email)) {
+            flag = false;
+          } else if (!password_regex.test(password)) {
+            flag = false;
+          }
+          if (!flag) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        });
+
+        $("input[name=email]").on("input", function() {
+          let email = $("input[name=email]").val();
+          const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (email === "") {
+            $("#email-err").css("display", "none");
+            $("#email-missing").css("display", "inline-block");
+          } else if (!email_regex.test(email)) {
+            $("#email-missing").css("display", "none");
+            $("#email-err").css("display", "inline-block");
+          } else {
+            $("#email-missing").css("display", "none");
+            $("#email-err").css("display", "none");
+          }
+        });
+
+        $("input[name=psw]").on("input", function() {
+          let pass = $("input[name=psw]").val();
+          const password_regex = /^[\w\s]{8,}$/;
+          if (pass === "") {
+            $("#pass-missing").css("display", "inline-block");
+            $("#pass-err").css("display", "none");
+          } else if (!password_regex.test(pass)) {
+            $("#pass-missing").css("display", "none");
+            $("#pass-err").css("display", "inline-block");
+          } else {
+            $("#pass-missing").css("display", "none");
+            $("#pass-err").css("display", "none");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
